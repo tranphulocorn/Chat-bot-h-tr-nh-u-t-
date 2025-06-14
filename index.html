@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="vi">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Chatbot Cố Vấn Đầu Tư</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  light: '#67e8f9', // cyan-300
+                  DEFAULT: '#06b6d4', // cyan-500
+                  dark: '#0e7490', // cyan-700
+                },
+                secondary: {
+                  light: '#f3e8ff', // purple-100
+                  DEFAULT: '#a855f7', // purple-600
+                  dark: '#7e22ce', // purple-800
+                },
+                neutral: {
+                  light: '#f3f4f6', // gray-100
+                  DEFAULT: '#6b7280', // gray-500
+                  dark: '#1f2937', // gray-800
+                }
+              }
+            }
+          }
+        }
+      </script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/heroicons/2.1.3/24/outline/heroicons.min.css" rel="stylesheet">
+      <style>
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+        body {
+          font-family: 'Inter', sans-serif; /* A nice sans-serif font */
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.1.0/",
+        "react": "https://esm.sh/react@^19.1.0",
+        "@google/genai": "https://esm.sh/@google/genai@^1.5.1",
+        "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+      }
+    }
+    </script>
+      <!-- DEVELOPMENT ONLY: Set your Gemini API Key here -->
+      <script>
+        window.process = window.process || {};
+        window.process.env = window.process.env || {};
+        // ==============================================================================
+        // ==== THAY THẾ "YOUR_GEMINI_API_KEY_HERE" BẰNG API KEY THỰC CỦA BẠN ====
+        // ==== KHÔNG COMMIT API KEY NÀY VÀO GIT HOẶC CHIA SẺ CÔNG KHAI      ====
+        window.process.env.API_KEY = "AIzaSyBMpxCI0l0YmTVvMT4cHAnxpjLt4uc8VMI"; 
+        // ==============================================================================
+        if (window.process.env.API_KEY === "YOUR_GEMINI_API_KEY_HERE" || !window.process.env.API_KEY || window.process.env.API_KEY === "AIzaSyBMpxCI0l0YmTVvMT4cHAnxpjLt4uc8VMI" && window.process.env.API_KEY.includes("YOUR_GEMINI_API_KEY_HERE")) { // Added check for the actual key placeholder too
+          console.warn("API_KEY chưa được thiết lập đúng cách trong index.html. Chatbot có thể không hoạt động. Vui lòng kiểm tra lại giá trị API Key.");
+        }
+      </script>
+      <!-- Library for parsing .docx files -->
+      <script src="https://cdn.jsdelivr.net/npm/mammoth@1.7.0/mammoth.browser.min.js"></script>
+      <!-- Library for parsing .xlsx and .xls files -->
+      <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="/index.css">
+</head>
+    <body class="bg-neutral-light">
+      <div id="root"></div>
+      <script type="module" src="/index.tsx"></script>
+    </body>
+    </html>

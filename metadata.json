@@ -1,0 +1,5 @@
+{
+  "name": "Investment Advisor Chatbot",
+  "description": "A chatbot to provide guidance on investment for beginners. Users can upload documents to provide additional context to the chatbot.",
+  "requestFramePermissions": []
+}
